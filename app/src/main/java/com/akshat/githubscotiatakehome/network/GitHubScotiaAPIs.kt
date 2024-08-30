@@ -1,6 +1,6 @@
 package com.akshat.githubscotiatakehome.network
 
-import com.akshat.githubscotiatakehome.model.userrepos.UserReposData
+import com.akshat.githubscotiatakehome.model.userrepos.UserReposDataItem
 import com.akshat.githubscotiatakehome.model.users.UsersData
 import com.akshat.githubscotiatakehome.utils.Constants
 import retrofit2.http.GET
@@ -23,7 +23,7 @@ interface GitHubScotiaAPIs {
         @Path("username") username: String,
         @Query("Authorization:") token: String = Constants.BEARER_TOKEN
 
-    ) : UserReposData
+    ): List<UserReposDataItem>
 
 
 }

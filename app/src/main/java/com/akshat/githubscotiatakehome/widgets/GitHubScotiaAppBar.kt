@@ -32,11 +32,8 @@ fun GitHubScotiaAppBar(
         TopAppBar(
             title = {
                 Text(
-                    text = title,
-                    color = Color.White,
-                    style = TextStyle(
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 17.sp
+                    text = title, color = Color.White, style = TextStyle(
+                        fontWeight = FontWeight.Bold, fontSize = 17.sp
                     )
                 )
             },
@@ -52,9 +49,7 @@ fun GitHubScotiaAppBar(
             },
             colors = TopAppBarDefaults.smallTopAppBarColors(
                 containerColor = Color(
-                    red = 75,
-                    green = 95,
-                    blue = 188
+                    red = 75, green = 95, blue = 188
                 )
             ),
         )

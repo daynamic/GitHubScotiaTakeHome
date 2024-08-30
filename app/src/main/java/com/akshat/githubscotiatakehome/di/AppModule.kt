@@ -16,7 +16,7 @@ import javax.inject.Singleton
 class AppModule {
     @Provides
     @Singleton
-    fun provideUsersDataApi() : GitHubScotiaAPIs{
+    fun provideUsersDataApi(): GitHubScotiaAPIs {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
