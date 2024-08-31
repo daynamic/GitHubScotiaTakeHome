@@ -18,7 +18,7 @@ interface GitHubScotiaAPIs {
     ): UsersData
 
     @Headers("Accept: application/vnd.github+json")
-    @GET(value = "users/{username}/repos?per_page=50")
+    @GET(value = "users/{username}/repos?per_page=100")
     suspend fun getUserReposData(
         @Path("username") username: String,
         @Query("Authorization:") token: String = Constants.BEARER_TOKEN

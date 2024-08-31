@@ -7,6 +7,6 @@ data class UsersData(
     val id: Int,
     val location: String,
     val login: String,
-    val name: String,
+    val name : String,
     val repos_url: String,
 )
