@@ -128,9 +128,12 @@ fun PopulateData(userId: String, mainViewModel: MainViewModel, navController: Na
             )
         }
     } else {
-        Text(text = "$userId is not valid", color = Color.Gray,
+        Text(
+            text = "$userId is not valid",
+            color = Color.Gray,
             style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.Bold)
+            fontWeight = FontWeight.Bold
+        )
     }
 
 }
@@ -152,7 +155,12 @@ fun NameImageContent(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        data.data?.let { HeaderViewContent(userImageUrl = it.avatar_url, userFullName = if (!it.name.isNullOrBlank()) it.name else "") }
+        data.data?.let {
+            HeaderViewContent(
+                userImageUrl = it.avatar_url,
+                userFullName = if (!it.name.isNullOrBlank()) it.name else ""
+            )
+        }
         LazyColumn {
             reposData.data?.let {
                 items(items = it) { reposData ->

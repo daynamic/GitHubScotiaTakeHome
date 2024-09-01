@@ -1,7 +1,5 @@
 package com.akshat.githubscotiatakehome.data
 
 class DataOrException<T, Boolean, E : Exception>(
-    var data: T? = null,
-    var loading: Boolean? = null,
-    var e: E? = null
+    var data: T? = null, var loading: Boolean? = null, var e: E? = null
 )

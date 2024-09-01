@@ -5,7 +5,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.akshat.githubscotiatakehome.model.userrepos.UserReposDataItem

@@ -17,10 +17,8 @@ class AppModule {
     @Provides
     @Singleton
     fun provideUsersDataApi(): GitHubScotiaAPIs {
-        return Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        return Retrofit.Builder().baseUrl(Constants.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create()).build()
             .create(GitHubScotiaAPIs::class.java)
     }
 

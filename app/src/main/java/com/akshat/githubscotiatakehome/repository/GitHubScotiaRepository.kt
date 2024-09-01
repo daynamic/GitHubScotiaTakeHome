@@ -1,6 +1,5 @@
 package com.akshat.githubscotiatakehome.repository
 
-import android.util.Log
 import com.akshat.githubscotiatakehome.data.DataOrException
 import com.akshat.githubscotiatakehome.model.userrepos.UserReposDataItem
 import com.akshat.githubscotiatakehome.model.users.UsersData
@@ -22,7 +21,6 @@ class GitHubScotiaRepository @Inject constructor(private val api: GitHubScotiaAP
         val response = try {
             api.getUserReposData(username = userName)
         } catch (e: Exception) {
-            Log.d("GETUSERReposeDATA", "getUserReposData :$e")
             return DataOrException(e = e)
         }
         return DataOrException(data = response)

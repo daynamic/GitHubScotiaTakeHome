@@ -78,16 +78,10 @@ fun UserInputText(
 
 @Composable
 fun SearchButton(
-    modifier: Modifier = Modifier,
-    text: String,
-    onClick: () -> Unit = { },
-    enabled: Boolean = true
+    modifier: Modifier = Modifier, text: String, onClick: () -> Unit = { }, enabled: Boolean = true
 ) {
     Button(
-        onClick =  onClick ,
-        shape = ButtonDefaults.shape,
-        enabled = enabled,
-        modifier = modifier
+        onClick = onClick, shape = ButtonDefaults.shape, enabled = enabled, modifier = modifier
     ) {
         Text(text)
     }
@@ -159,7 +153,7 @@ fun HeaderViewContent(userImageUrl: String, userFullName: String) {
             GithubStateImage(imageUrl = userImageUrl)
             Text(
                 modifier = Modifier.padding(top = 5.dp),
-                text = if (!userFullName.isNullOrBlank())formatWords(userFullName) else "",
+                text = if (!userFullName.isNullOrBlank()) formatWords(userFullName) else "",
                 color = Color.Gray,
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold
