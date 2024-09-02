@@ -1,4 +1,4 @@
-package com.akshat.githubscotiatakehome.screens
+package com.akshat.githubscotiatakehome.screens.main
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -30,6 +30,7 @@ import com.akshat.githubscotiatakehome.data.DataOrException
 import com.akshat.githubscotiatakehome.model.userrepos.UserReposDataItem
 import com.akshat.githubscotiatakehome.model.users.UsersData
 import com.akshat.githubscotiatakehome.navigation.GithubScotiaScreens
+import com.akshat.githubscotiatakehome.screens.MainViewModel
 import com.akshat.githubscotiatakehome.widgets.GitHubScotiaAppBar
 import com.akshat.githubscotiatakehome.widgets.HeaderViewContent
 import com.akshat.githubscotiatakehome.widgets.ReposDataRow

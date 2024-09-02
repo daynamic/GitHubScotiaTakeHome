@@ -9,8 +9,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.akshat.githubscotiatakehome.model.userrepos.UserReposDataItem
 import com.akshat.githubscotiatakehome.navigation.GithubScotiaScreens.MainScreen
-import com.akshat.githubscotiatakehome.screens.MainScreen
-import com.akshat.githubscotiatakehome.screens.DetailsScreen
+import com.akshat.githubscotiatakehome.screens.main.MainScreen
+import com.akshat.githubscotiatakehome.screens.details.DetailsScreen
 import com.akshat.githubscotiatakehome.screens.MainViewModel
 import com.google.gson.Gson
 import java.net.URLDecoder

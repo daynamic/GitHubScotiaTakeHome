@@ -1,4 +1,4 @@
-package com.akshat.githubscotiatakehome.screens
+package com.akshat.githubscotiatakehome.screens.details
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
