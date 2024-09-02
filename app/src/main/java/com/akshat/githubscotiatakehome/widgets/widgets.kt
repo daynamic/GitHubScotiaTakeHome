@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardColors
@@ -35,6 +36,7 @@ import coil.compose.rememberImagePainter
 import com.akshat.githubscotiatakehome.data.DataOrException
 import com.akshat.githubscotiatakehome.model.userrepos.UserReposDataItem
 import com.akshat.githubscotiatakehome.model.users.UsersData
+import com.akshat.githubscotiatakehome.utils.Constants
 import com.akshat.githubscotiatakehome.utils.formatWords
 
 @Composable
@@ -47,9 +49,7 @@ fun UserInputText(
     onImeAction: () -> Unit = { }
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
-    val focusedColor = Color(
-        red = 237, green = 108, blue = 140
-    )
+    val focusedColor = Constants.EDIT_TEXT_SELECTED_COLOR
 
     TextField(
         value = text,
@@ -80,8 +80,18 @@ fun UserInputText(
 fun SearchButton(
     modifier: Modifier = Modifier, text: String, onClick: () -> Unit = { }, enabled: Boolean = true
 ) {
+    val focusedColor = Constants.APP_BAR_THEME_COLOR
     Button(
-        onClick = onClick, shape = ButtonDefaults.shape, enabled = enabled, modifier = modifier
+        onClick = onClick,
+        shape = ButtonDefaults.shape,
+        enabled = enabled,
+        modifier = modifier,
+        colors = ButtonColors(
+            containerColor = focusedColor,
+            contentColor = Color.White,
+            disabledContentColor = Color.White,
+            disabledContainerColor = focusedColor
+        )
     ) {
         Text(text)
     }

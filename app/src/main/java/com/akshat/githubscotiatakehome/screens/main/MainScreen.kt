@@ -31,6 +31,7 @@ import com.akshat.githubscotiatakehome.model.userrepos.UserReposDataItem
 import com.akshat.githubscotiatakehome.model.users.UsersData
 import com.akshat.githubscotiatakehome.navigation.GithubScotiaScreens
 import com.akshat.githubscotiatakehome.screens.MainViewModel
+import com.akshat.githubscotiatakehome.utils.Constants
 import com.akshat.githubscotiatakehome.widgets.GitHubScotiaAppBar
 import com.akshat.githubscotiatakehome.widgets.HeaderViewContent
 import com.akshat.githubscotiatakehome.widgets.ReposDataRow
@@ -84,6 +85,7 @@ fun MainScreen(
                     SearchButton(modifier = Modifier.padding(
                         top = 9.dp, end = 9.dp
                     ), text = "Search", onClick = {
+                        if (userId.isNotBlank())
                         buttonState = true
                     })
                 }
@@ -106,6 +108,7 @@ fun MainScreen(
 
 @Composable
 fun PopulateData(userId: String, mainViewModel: MainViewModel, navController: NavController) {
+    val themeColor = Constants.APP_BAR_THEME_COLOR
     val userData = produceState<DataOrException<UsersData, Boolean, Exception>>(
         initialValue = DataOrException(loading = true)
     ) {
@@ -113,7 +116,7 @@ fun PopulateData(userId: String, mainViewModel: MainViewModel, navController: Na
     }.value
 
     if (userData.loading == true) {
-        CircularProgressIndicator()
+        CircularProgressIndicator(color = themeColor)
     } else if (userData.data != null) {
         val userReposData =
             produceState<DataOrException<List<UserReposDataItem>, Boolean, Exception>>(
@@ -122,7 +125,7 @@ fun PopulateData(userId: String, mainViewModel: MainViewModel, navController: Na
                 value = mainViewModel.getUserReposData(userName = userId)
             }.value
         if (userReposData.loading == true) {
-            CircularProgressIndicator()
+            CircularProgressIndicator(color = themeColor)
         } else if (userReposData.data != null) {
             NameImageContent(
                 data = userData, reposData = userReposData, navController = navController

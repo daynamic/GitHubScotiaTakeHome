@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.akshat.githubscotiatakehome.utils.Constants
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -48,9 +49,7 @@ fun GitHubScotiaAppBar(
                 }
             },
             colors = TopAppBarDefaults.smallTopAppBarColors(
-                containerColor = Color(
-                    red = 75, green = 95, blue = 188
-                )
+                containerColor = Constants.APP_BAR_THEME_COLOR
             ),
         )
     }
